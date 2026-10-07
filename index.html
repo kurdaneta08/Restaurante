@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layli | Resumen y Seguimiento de Sushi</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="layli-wrapper">
+        <!-- Barra de navegación con campos manuales -->
+        <nav class="layli-nav">
+            <div class="brand-group">
+                <span class="brand-dot"></span>
+                <span class="brand-title">LAYLI SUSHI</span>
+            </div>
+            
+            <div class="nav-links-group">
+                
+                <a href="https://github.com/kurdaneta08/Restaurante.git" target="_blank" class="nav-link-item" title="Ver Repositorio">
+                    <span></span> Repositorio
+                </a>
+                
+                
+                <a href="https://github.com/kurdaneta08" target="_blank" class="nav-link-item" title="Ir al Usuario de GitHub">
+                    <span></span> Usuario GitHub
+                </a>
+
+                <!-- 3. Tu nombre sin enlace (solo texto) -->
+                <div class="nav-text-item author-name-box">
+                    <span></span> Karen Urdaneta
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenedor Principal -->
+        <main class="layli-container">
+            <header class="header-box">
+                <div>
+                    <span class="badge-code">ORDEN #LY-9024</span>
+                    <h1>Panel de Pedido</h1>
+                </div>
+                <div class="timer-box" id="liveStatus">
+                    <span class="timer-label">TIEMPO</span>
+                    <strong id="countdown">05</strong>
+                    <span class="timer-unit">seg</span>
+                </div>
+            </header>
+
+            <!-- Barra de Progreso Lineal -->
+            <div class="progress-container">
+                <div class="progress-bar-fill" id="progressBar"></div>
+            </div>
+
+            <!-- Etapa Actual (Banner Dinámico) -->
+            <div class="status-banner" id="currentStageBox">
+                <div class="status-icon-wrapper" id="stageIcon">✓</div>
+                <div class="status-text">
+                    <strong id="stageTitle">Tu Selección</strong>
+                    <p id="stageMessage">Revisa los detalles de tu orden antes de la preparación.</p>
+                </div>
+            </div>
+
+            <!-- BLOQUE SUPERIOR: "TU SELECCIÓN" -->
+            <section class="selection-card-box" id="selectionSummary">
+                <div class="selection-title-group">
+                    <span class="selection-dot"></span>
+                    <h2>TU SELECCIÓN</h2>
+                </div>
+
+                <div class="items-list">
+                    <div class="selected-item-row">
+                        <div class="item-icon-circle"></div>
+                        <div class="item-details">
+                            <strong>Roll Dragón Especial</strong>
+                            <span>Langostino tempura, aguacate y atún</span>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price-usd">$8.50</span>
+                            <span class="price-bs">Bs. 7.406,65</span>
+                        </div>
+                    </div>
+
+                    <div class="selected-item-row">
+                        <div class="item-icon-circle"></div>
+                        <div class="item-details">
+                            <strong>Philadelphia Roll</strong>
+                            <span>Salmón fresco, queso crema y ajonjolí</span>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price-usd">$7.00</span>
+                            <span class="price-bs">Bs. 6.099,59</span>
+                        </div>
+                    </div>
+
+                    <div class="selected-item-row">
+                        <div class="item-icon-circle"></div>
+                        <div class="item-details">
+                            <strong>Jasmine Milk Tea</strong>
+                            <span>Con perlas de tapioca</span>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price-usd">$4.50</span>
+                            <span class="price-bs">Bs. 3.921,17</span>
+                        </div>
+                    </div>
+
+                    <!-- Nueva Bebida Agregada -->
+                    <div class="selected-item-row">
+                        <div class="item-icon-circle"></div>
+                        <div class="item-details">
+                            <strong>Maracuyá Mint</strong>
+                            <span>Refresco artesanal de parchita con hierbabuena</span>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price-usd">$3.50</span>
+                            <span class="price-bs">Bs. 3.049,80</span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="selected-item-row">
+                        <div class="item-icon-circle"></div>
+                        <div class="item-details">
+                            <strong>Mochi de Té Matcha</strong>
+                            <span>Pastelito de arroz glutinoso relleno de helado de matcha</span>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price-usd">$4.00</span>
+                            <span class="price-bs">Bs. 3.485,48</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="selection-divider"></div>
+
+                <!-- Total pagado actualizado -->
+                <div class="total-row">
+                    <span class="total-label">Total pagado</span>
+                    <div class="total-amounts">
+                        <strong class="total-usd">$27.50</strong>
+                        <span class="total-bs">Bs. 23.962,68</span>
+                    </div>
+                </div>
+
+                <div class="selection-divider"></div>
+
+                <!-- Dirección de entrega en Chacao -->
+                <div class="delivery-address-row">
+                    <div class="delivery-icon"></div>
+                    <div class="delivery-info">
+                        <span class="delivery-title">Entregar en</span>
+                        <p>Av. Francisco de Miranda, Torre C.C. El Rosal, Chacao · Caracas</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grilla de Pasos Visuales -->
+            <div class="steps-grid" id="steps">
+                <div class="step-card active" data-step="0">
+                    <span class="step-num">01</span>
+                    <strong>Selección</strong>
+                </div>
+                <div class="step-card" data-step="1">
+                    <span class="step-num">02</span>
+                    <strong>Preparación</strong>
+                </div>
+                <div class="step-card" data-step="2">
+                    <span class="step-num">03</span>
+                    <strong>En camino</strong>
+                </div>
+                <div class="step-card" data-step="3">
+                    <span class="step-num">04</span>
+                    <strong>Entregado</strong>
+                </div>
+            </div>
+
+            <!-- Acciones -->
+            <div class="action-zone">
+                <button class="btn-main" id="startButton" type="button">
+                    <span>▶</span> Iniciar Simulación de Pedido
+                </button>
+                <button class="btn-alt" id="resetButton" type="button" hidden>
+                    ↻ Reiniciar Secuencia
+                </button>
+            </div>
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="layli-footer">
+            <span>Layli Architecture // Secure Node</span>
+            <span>2026</span>
+        </footer>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
